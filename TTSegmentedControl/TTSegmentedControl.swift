@@ -24,6 +24,8 @@ public class TTSegmentedControl: UIView {
     @IBInspectable open var thumbGradientColors: [UIColor]? = [TTSegmentedControl.UIColorFromRGB(0xFFE900),TTSegmentedControl.UIColorFromRGB(0xFFB400)]
     @IBInspectable open var thumbShadowColor: UIColor = TTSegmentedControl.UIColorFromRGB(0x9B9B9B)
     @IBInspectable open var useShadow:Bool = true
+    @IBInspectable open var allowChangeThumbWidth:Bool = true
+    @IBInspectable open var allowDrag:Bool = true
     
     //left and right space between items
     @IBInspectable open var padding: CGSize = CGSize(width: 30, height: 10)
@@ -59,8 +61,6 @@ public class TTSegmentedControl: UIView {
     open var didChangeDraggingState: ((DraggingState) -> ())?
     
     fileprivate(set) var isDragging = false
-    open var allowDrag = true
-    open var allowChangeThumbWidth = true
     
     fileprivate var containerView = UIView()
     fileprivate var thumbContainerView = UIView()
