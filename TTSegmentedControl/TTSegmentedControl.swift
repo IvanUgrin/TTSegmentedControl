@@ -229,6 +229,8 @@ extension TTSegmentedControl {
             
             thumbContainerView.layer.borderWidth = borderWidth
             thumbContainerView.layer.borderColor = borderColor.cgColor
+            thumbContainerView.layer.cornerRadius = cornerRadius
+            thumbContainerView.layer.masksToBounds = true
         }
         
         if thumbGradientColors != nil && self.useGradient {
