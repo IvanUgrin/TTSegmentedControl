@@ -28,6 +28,8 @@ public class TTSegmentedControl: UIView {
     //left and right space between items
     @IBInspectable open var padding: CGSize = CGSize(width: 30, height: 10)
     @IBInspectable open var cornerRadius: CGFloat = -1 // for rounded corner radius use negative value, 0 to disable
+    @IBInspectable open var borderWidth: CGFloat = 0
+    @IBInspectable open var borderColor: UIColor = UIColor.clear
     
     public enum DraggingState: Int {
         case none
@@ -224,6 +226,9 @@ extension TTSegmentedControl {
             shadowLayer.masksToBounds = false
             
             thumbContainerView.layer.insertSublayer(shadowLayer, at: 0)
+            
+            thumbContainerView.layer.borderWidth = borderWidth
+            thumbContainerView.layer.borderColor = borderColor.cgColor
         }
         
         if thumbGradientColors != nil && self.useGradient {
