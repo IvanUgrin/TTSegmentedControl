@@ -295,9 +295,11 @@ extension TTSegmentedControl {
     fileprivate func createLabelWithTitle(_ attributedTitle: NSAttributedString, tag: Int) -> UILabel {
         let label = UILabel()
         label.textAlignment = .center
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.attributedText = attributedTitle
         label.tag = tag
+        label.adjustsFontSizeToFitWidth = true
+        label.lineBreakMode = .byClipping
         return label
         
     }
